@@ -1,4 +1,4 @@
-# 2019-S2-SEP-AI4
+# Explainability feedback tool for Natural Language Processing
 
 ## How to run
 
