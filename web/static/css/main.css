@@ -1,0 +1,222 @@
+body {
+	font-family: 'ibm-plex-sans', 'Helvetica Neue', Arial, sans-serif;
+	color: white;
+	margin: 0;
+	background: white;
+}
+
+header {
+	display: flex;
+	background: #4C586F;
+}
+
+section {
+	color: grey;
+	padding: 20px 20px 20px 20px;
+	display: flex;
+}
+
+div {
+	display: inline-block;
+	margin: auto;
+}
+
+.subHeader {
+	display: flex;
+	background: #A2AAB0;
+	padding: 0px;
+	text-align: center;
+	width: 100%;
+}
+
+.title {
+	margin-top: 0;
+	padding-top: 0px;
+	margin-bottom: 0;
+	padding-bottom: 0px;
+}
+
+.navStrip {
+	display: flex;
+	padding: 0px;
+	background: #3E3E3B;
+	padding-right: 25%;
+	padding-left: 25%;
+	margin-bottom: 20px;
+}
+
+.navButtons {
+	padding: 0px;
+	min-width: 100px;
+	text-align: center;
+}
+
+.fileInput {
+	text-align: center;
+}
+
+.fileUpload {
+	margin: 20px;
+}
+
+.sentence {
+	color: #4C586F;
+	margin-bottom: 10px;
+	display: block;
+}
+
+.msg {
+	color: #4C586F;
+	margin-bottom: 10px;
+}
+
+.POS {
+	color: red;
+	margin-bottom: 10px;
+}
+
+.NEG {
+	color: green;
+	margin-bottom: 10px;
+}
+
+.POS_drug {
+	margin-bottom: 0px;
+}
+
+.NEG_explain {
+	color: green;
+	margin-bottom: 0px;
+}
+
+.POS_event {
+	margin-bottom: 0px;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	color: #4C586F;
+	text-align: left;
+}
+
+.verticalBar {
+	border-left: 2px solid #A2AAB0;
+  height: 230px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+}
+
+input {
+  border-style: solid;
+  border-color: #A2AAB0;
+  border-width: 1px;
+}
+
+h4 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.submitButton {
+  background-color: #4C586F;
+  border: none;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px;
+  cursor: pointer;
+}
+
+.declineButton {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 5px 10px 5px;
+  cursor: pointer;
+  width: 120px;
+}
+
+.acceptButton {
+  background-color: red;
+  border: none;
+  color: white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 5px 10px 5px;
+  cursor: pointer;
+  width: 120px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.discardButton {
+  background-color: #3E3E3B;
+  border: none;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 5px 10px 5px;
+  cursor: pointer;
+  width: 120px;
+}
+
+.textInput {
+	width: 500px;
+	height: 230px;
+	margin-left: 0px;
+	text-align: center;
+	padding: 0px 10px 0px 10px;
+}
+
+.feedback {
+	width: 820px;
+	outline: 2px solid #A2AAB0;
+	padding: 0px 20px 10px 20px;
+	text-align: center;
+}
+
+footer {
+	background: #4C586F;
+	padding: 4px;
+	text-align: center;
+	font-size: small;
+}
+
+a:link, a:visited {
+	color: white;
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	min-width: 130px;
+}
+
+a:hover, a:active {
+	background-color: #4C586F;
+}
+
+.container {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}

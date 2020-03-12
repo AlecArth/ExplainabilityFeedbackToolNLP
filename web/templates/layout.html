@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title>SEP AI4</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </script>
+</head>
+<body>
+
+	<header>
+		<div class='title'>
+			<h2>Explainability Feedback Tool for Natural Language Processing</h2>
+			<p>Quick blurb...</p>
+		</div>
+	</header>
+
+	<div class='navStrip'>
+		<div class='navButtons'><a href="{{ url_for('home') }}">Home</a></div>
+		<div class='navButtons'><a href="{{ url_for('controlPanel') }}">Control Panel</a></div>
+		<div class='navButtons'><a href="{{ url_for('userGuide') }}">User Guide</a></div>
+	</div>
+
+	<div class="container">
+		{% block content %}
+		{% endblock %}
+    </div>
+
+	<footer>
+		<p>SEP 2019 S2 - AI4</p>
+		<p>The University of Adelaide</p>
+	</footer>
+
+</body>
+</html>

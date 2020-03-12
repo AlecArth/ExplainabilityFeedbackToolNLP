@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class='subHeader'>
+	<div class='subHeaderText'>
+		<h3>Text Submission</h3>
+	</div>
+</div>
+
+<section>
+	<div class='fileInput'>
+		<h4>File Upload</h4>
+		<form method="post" action="/" enctype="multipart/form-data">
+			<p>
+				<input class='fileUpload' type="file" name="files[]" multiple="true" autocomplete="off" required>
+			</p>
+			<p><button class="submitButton" type="submit">Submit</button></p>
+			<p class='msg'>
+				{% with uploads = get_flashed_messages(category_filter=["uploads"]) %}
+					{% if uploads %}
+						<ul>
+						{% for message in uploads %}
+							<li>{{ message }}</li>
+						{% endfor %}
+						</ul>
+					{% endif %}
+				{% endwith %}
+			</p>
+		</form>
+	</div>
+</section>
+
+<div class='subHeader'>
+	<div class='subHeaderText'>
+		<h3>Feedback</h3>
+	</div>
+</div>
+
+<section>
+	<div class='feedback'>
+		<form action="/feedback" enctype="multipart/form-data">
+			<p><button class="submitButton" type="submit">Begin Sentence Review</button></p>
+			<h4>Sentence</h4>
+			<div class='sentenceArea'>
+				{% with sentence_type = get_flashed_messages(with_categories=true, category_filter=["POS", "NEG"]) %}
+					{% if sentence_type %}
+						{% for category, message in sentence_type %}
+							<div class='{{ category }}'> {{ message }} </div>
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+				
+				{% with sentences = get_flashed_messages(category_filter=["sentences"]) %}
+					{% if sentences %}
+						{% for message in sentences %}
+							<div class='sentence'> "{{ message }}" </div>
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+
+				{% with explain = get_flashed_messages(with_categories=true, category_filter=["NEG_explain"]) %}
+					{% if explain %}
+						{% for category, message in explain %}
+							<div class='{{ category }}'><b>{{ message }}</b></div>
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+				
+				{% with explain = get_flashed_messages(with_categories=true, category_filter=["POS_drug"]) %}
+					{% if explain %}
+						{% for category, message in explain %}
+							<div class='{{ category }}'> Drug: <div style="color:red;"><b>{{ message }}</b></div>, </div>
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+
+				{% with explain = get_flashed_messages(with_categories=true, category_filter=["POS_event"]) %}
+					{% if explain %}
+						{% for category, message in explain %}
+							<div class='{{ category }}'> Event: <div style="color:red;"><b>{{ message }}</b></div> </div>
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+			</div>
+		</form>
+		<h4>Action</h4>
+
+			<div>
+				<form action="/DAE" enctype="multipart/form-data">
+					<button class="acceptButton" type="submit">Save as DAE</button>
+				</form>
+			</div>
+
+			<div>
+				<form action="/discard" enctype="multipart/form-data">
+					<button class="discardButton" type="submit">Discard Sentence</button>
+				</form>
+			</div>
+
+			<div>
+				<form action="/NDAE" enctype="multipart/form-data">
+					<button class="declineButton" type="submit">Save as Non-DAE</button>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+{% endblock %}
